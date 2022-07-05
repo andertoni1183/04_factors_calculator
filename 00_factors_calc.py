@@ -58,13 +58,42 @@ def num_check(question, low):
             print(error)
 
 
+# Gets factors, returns a sorted list
+def get_factors(to_factor):
+
+    #List to hold factors
+    factors_list = []
+
+    #Square root to_factors to find 'half-way'
+    limit = int(to_factor**0.5)
 
 
+    #find factor pairs and to find 'half-way'
+    for item in range(1, limit + 1):
 
+        #Cheak factor is not 1 (unity)
 
+        if to_factor == 1:
+            break
 
+    # Check if number is a factor
+    result = to_factor % item
+    factor_1 = int(to_factor // item)   
 
+    # Add factor to a list if it is not already in there
+    if result == 0:
+        factors_list.append(item)
 
+    if factor_1 != item and result == 0:
+            factors_list.append(factor_1)
+
+    # sort list...        
+    factors.sort()
+
+    return(factors_list)                      
+
+        
+    
 # Main Routine goes here
 
 # Heading
